@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Ewidencja 8000 - ULTIMATE</title>
+</head>
+
+<style>
+
+</style>
+
+<body>
+<div class="navigationBar">
+
+    <form th:action="@{/logout}" method="post">
+        <button type="submit" class="logoutButton">Wyloguj się</button>
+    </form>
+
+    <a sec:authorize="hasAuthority('ADMIN')" class="nav-item" href="/adminpanel" style="float:right; margin: 10px;">Admin Panel</a>
+</div>
+
+<div class="booksDisplay">
+    <h2>Lista sprzetu</h2>
+    <div th:each="item : ${items}" class="itemCard">
+        <img th:src="${item.imageURL}" class="bookImg" alt="zdjecie">
+        <p class="card-brand" th:text="${item.brand}">Marka: </p>
+        <p class="card-model" th:text="${book.author}">Model: </p>
+        <p class="card-serial" th:text="${book.price} + ' PLN'">Numer Seryjny: </p>
+        <p class="card-origin" th:text="'Ilość: ' + ${book.quantity}">Skad: </p>
+        <p class="card-current" th:text="'Ilość: ' + ${book.quantity}">Dokad: </p>
+        <p class="card-quantity" th:text="'Ilość: ' + ${book.quantity}">Ilość</p>
+    </div>
+</div>
+
+
+</body>
+</html>

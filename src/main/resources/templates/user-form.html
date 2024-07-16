@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <style>
+
+    </style>
+</head>
+<body>
+    <a class="nav-item" href="/adminpanel" style="float:right; margin: 10px;">Admin enabled</a>
+</div>
+<div class="userForm">
+    <form method="post" th:object="${user}" class="registerForm">
+        <input type="text" placeholder="login" class="input-field" th:field="*{username}" id="username">
+        <input type="text" placeholder="password" class="input-field" th:field="*{password}" id="password">
+        <input type="submit" value="Dodaj" class="addButton">
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:method="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Login</title>
+</head>
+
+<style>
+
+</style>
+
+<body>
+<div th:if="${errorMessage}" th:text="${errorMessage}" class="msg"></div>
+<div th:if="${logoutMessage}" th:text="${logoutMessage}" class="msg"></div>
+<div th:if="${message}" th:text="${message}" class="msg"></div>
+<h1 class="loginHeader">Logowanie</h1>
+
+<form th:action="@{/login}" method="post" class="loginPanel">
+    <div>
+        <!--        <label for="username">Nazwa użytkownika:</label>-->
+        <input type="text" class="loginInput" id="username" name="username" placeholder="username" required/>
+    </div>
+    <div>
+        <!--        <label for="password">Hasło:</label>-->
+        <input type="password" class="loginInput" id="password" name="password" placeholder="password" required />
+    </div>
+    <div>
+        <button type="submit" class="loginButton">Zaloguj się</button>
+    </div>
+    <div>
+        <button onclick="location.href='/register'" type="button" class="registerButton">Zarejestruj sie</button>
+    </div>
+</form>
+</body>
+</html>

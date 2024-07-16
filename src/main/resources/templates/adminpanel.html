@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<style>
+
+</style>
+<body>
+    <form method="get" th:action="@{adminpanel/add}">
+        <input type="submit" value="Dodaj uzytkownika" class="newUserButton">
+    </form>
+    <form th:action="@{/logout}" method="post">
+        <button type="submit" class="logoutButton">Wyloguj się</button>
+    </form>
+
+    <a class="nav-item" href="/adminpanel" style="float:right; margin: 10px;">Admin enabled</a>
+</div>
+
+<div class="usersDisplay">
+    <h2>Lista userow</h2>
+    <div th:each="user : ${users}" class="usersCard">
+        <p class="user-username" th:text="${user.username}">User: </p>
+        <form method="post" th:action="@{adminpanel/delete}">
+            <input type="hidden" th:name="id" th:value="${user.id}" />
+            <!--            <input type="submit" value="Usuń"  />-->
+            <button class="deleteButton">USUN</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
