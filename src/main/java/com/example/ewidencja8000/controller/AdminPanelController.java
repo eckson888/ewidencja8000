@@ -10,6 +10,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.List;
 
 @Controller
 public class AdminPanelController {
@@ -21,7 +24,11 @@ public class AdminPanelController {
     @RequestMapping(path= {"/adminpanel"},method = RequestMethod.GET)
     public String adminpanel(Model model)
     {
-        model.addAttribute("users",this.userService.getAll());
+        List<User> usersExceptCurrent;
+        usersExceptCurrent = this.userService.getAll();
+        User current = this.userService.getCurrentUser();
+        usersExceptCurrent.remove(current);
+        model.addAttribute("users",usersExceptCurrent);
         return "adminpanel";
     }
 
@@ -37,4 +44,10 @@ public class AdminPanelController {
         return "redirect:/adminpanel";
     }
 
+    @RequestMapping(path ="/adminpanel/delete", method = RequestMethod.POST)
+    public String delete(@RequestParam long id)
+    {
+        userService.delete(id);
+        return "redirect:/adminpanel";
+    }
 }

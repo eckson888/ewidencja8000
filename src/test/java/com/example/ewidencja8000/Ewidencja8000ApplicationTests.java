@@ -6,8 +6,4 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class Ewidencja8000ApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
-
 }

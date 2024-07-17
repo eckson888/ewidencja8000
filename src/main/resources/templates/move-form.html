@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <style>
+        html{
+    height: 100%;
+    color: white;
+    }
+        body
+        {
+        background-color: rgba(33, 33, 33, 1);
+        background-image: linear-gradient(180deg, rgba(33, 33, 33, 1) 0%, rgba(57, 57, 57, 1) 50%, rgba(0, 0, 0, 1) 100%);
+height: 100%;
+        }
+    </style>
+</head>
+<body>
+</div>
+<div class="itemFormContainer">
+    <form method="post" th:object="${item}" class="itemForm">
+        <input type="text" placeholder="Skad?" class="input-field" th:field="*{origin}" id="originInput" oninput="this.value = this.value.toUpperCase()" required>
+        <input type="text" placeholder="Gdzie teraz" class="input-field" th:field="*{current}" id="currentInput" oninput="this.value = this.value.toUpperCase()" required>
+        <input type="text" placeholder="Kto Odpowiedzialny?" class="input-field" th:field="*{responsible}" oninput="this.value = this.value.toUpperCase()" id="responsibleInput">
+<!--        <input type="number" placeholder="ilosc" class="input-field" th:field="*{quantity}" id="quantityInput" required>-->
+        <input type="hidden" th:field="*{brand}" th:value="${item.brand}" />
+        <input type="hidden" th:field="*{model}" th:value="${item.model}" />
+        <input type="hidden" th:field="*{serial}" th:value="${item.serial}" />
+        <input type="hidden" th:field="*{imageURL}" th:value="${item.imageURL}" />
+        <input type="submit" value="Dodaj" class="addButton">
+    </form>
+</div>
+</body>
+</html>

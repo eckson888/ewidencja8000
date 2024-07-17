@@ -5,6 +5,7 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.NoResultException;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -14,9 +15,15 @@ import java.util.Optional;
 public class ItemDAO implements IItemDAO {
 
     private final String GET_BY_ID_JPQL = "SELECT i FROM com.example.ewidencja8000.model.Item i WHERE i.id = :id";
-    private final String GET_BY_STORED = "SELECT i FROM com.example.ewidencja8000.model.Item i WHERE i.storedAt = :place";
-    private final String GET_BY_ORIGIN = "SELECT i FROM com.example.ewidencja8000.model.Item i WHERE i.origin = :origin";
-    private final String GET_BY_SERIAL = "SELECT i FROM com.example.ewidencja8000.model.Item i WHERE i.serial = :serial";
+
+    private final String SEARCH_BY_ALL =
+            "SELECT i FROM com.example.ewidencja8000.model.Item i WHERE" +
+            " i.brand LIKE '%' || :keyword || '%' OR" +
+            " i.model LIKE '%' || :keyword || '%' OR" +
+            " i.serial LIKE '%' || :keyword || '%' OR" +
+            " i.current LIKE '%' || :keyword || '%' OR" +
+            " i.origin LIKE '%' || :keyword || '%' OR" +
+            " i.responsible LIKE '%' || :keyword || '%'";
     @PersistenceContext
     private EntityManager entityManager;
     private final String GET_ALL_JPQL = "FROM com.example.ewidencja8000.model.Item";
@@ -36,40 +43,20 @@ public class ItemDAO implements IItemDAO {
             return Optional.empty();
         }
     }
-
-    @Override
-    public List<Item> getByCurrentPlace(String place) {
-        TypedQuery<Item> query = entityManager.createQuery(GET_BY_STORED, Item.class);
-        query.setParameter("place", place);
-        try {
-            return query.getResultList();
-        } catch (NoResultException e) {
-            return null;
-        }
-    }
-
-    @Override
-    public List<Item> getByOriginPlace(String place) {
-        TypedQuery<Item> query = entityManager.createQuery(GET_BY_ORIGIN, Item.class);
-        query.setParameter("origin", place);
-        try {
-            return query.getResultList();
-        } catch (NoResultException e) {
-            return null;
-        }
-    }
-
-    @Override
-    public Optional<Item> getBySerial(String serial) {
-        TypedQuery<Item> query = entityManager.createQuery(GET_BY_SERIAL, Item.class);
-        query.setParameter("serial", serial);
-        try {
-            return Optional.of(query.getSingleResult());
-        } catch (NoResultException e) {
-            return Optional.empty();
-        }
-    }
-
+//    }
+//
+//
+//    @Override
+//    public Optional<Item> getBySerial(String serial) {
+//        TypedQuery<Item> query = entityManager.createQuery(GET_BY_SERIAL, Item.class);
+//        query.setParameter("serial", serial);
+//        try {
+//            return Optional.of(query.getSingleResult());
+//        } catch (NoResultException e) {
+//            return Optional.empty();
+//        }
+//    }
+//
 
     @Override
     public List<Item> getAll() {
@@ -96,4 +83,17 @@ public class ItemDAO implements IItemDAO {
             entityManager.remove(item);
         }
     }
+
+
+    @Override
+    public List<Item> findByKeyword(String keyword) {
+        TypedQuery<Item> query = entityManager.createQuery(SEARCH_BY_ALL, Item.class);
+        query.setParameter("keyword", keyword.toUpperCase());
+        try {
+            return query.getResultList();
+        } catch (NoResultException e) {
+            return null;
+        }
+    }
+
 }

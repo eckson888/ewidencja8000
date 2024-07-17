@@ -37,25 +37,39 @@ public class ItemService implements IItemService {
         itemDAO.delete(id);
     }
 
+//    @Override
+//    @Transactional
+//    public List<Item> getByCurrentPlace(String place)
+//    {
+//        return this.itemDAO.getByCurrentPlace(place);
+//    }
+//
+//    @Override
+//    @Transactional
+//    public List<Item> getByOriginPlace(String origin)
+//    {
+//        return this.itemDAO.getByOriginPlace(origin);
+//    }
+//
+//    @Override
+//    @Transactional
+//    public Optional<Item> getBySerial(String serial)
+//    {
+//        return this.itemDAO.getBySerial(serial);
+//    }
+
     @Override
     @Transactional
-    public List<Item> getByCurrentPlace(String place)
+    public void addItem(Item item)
     {
-        return this.itemDAO.getByCurrentPlace(place);
+        this.itemDAO.saveOrUpdate(item);
     }
 
     @Override
     @Transactional
-    public List<Item> getByOriginPlace(String origin)
+    public List<Item> getByKeyword(String keyword)
     {
-        return this.itemDAO.getByOriginPlace(origin);
-    }
-
-    @Override
-    @Transactional
-    public Optional<Item> getBySerial(String serial)
-    {
-        return this.itemDAO.getBySerial(serial);
+        return this.itemDAO.findByKeyword(keyword);
     }
 
 }
