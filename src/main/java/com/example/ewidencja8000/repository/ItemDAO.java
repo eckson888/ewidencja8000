@@ -5,7 +5,6 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.NoResultException;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -43,20 +42,6 @@ public class ItemDAO implements IItemDAO {
             return Optional.empty();
         }
     }
-//    }
-//
-//
-//    @Override
-//    public Optional<Item> getBySerial(String serial) {
-//        TypedQuery<Item> query = entityManager.createQuery(GET_BY_SERIAL, Item.class);
-//        query.setParameter("serial", serial);
-//        try {
-//            return Optional.of(query.getSingleResult());
-//        } catch (NoResultException e) {
-//            return Optional.empty();
-//        }
-//    }
-//
 
     @Override
     public List<Item> getAll() {
@@ -88,7 +73,7 @@ public class ItemDAO implements IItemDAO {
     @Override
     public List<Item> findByKeyword(String keyword) {
         TypedQuery<Item> query = entityManager.createQuery(SEARCH_BY_ALL, Item.class);
-        query.setParameter("keyword", keyword.toUpperCase());
+        query.setParameter("keyword", keyword.toUpperCase().replaceAll("\\s+",""));
         try {
             return query.getResultList();
         } catch (NoResultException e) {
