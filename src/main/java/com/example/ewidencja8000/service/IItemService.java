@@ -15,5 +15,5 @@ public interface IItemService {
     List<Item> getAll();
     void delete(int id);
     void addItem(Item item);
-    List<Item> getByKeyword(String keyword);
+    List<Item> getByKeywords(List<String> keywords);
 }

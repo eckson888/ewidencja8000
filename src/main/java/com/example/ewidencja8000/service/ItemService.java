@@ -67,9 +67,9 @@ public class ItemService implements IItemService {
 
     @Override
     @Transactional
-    public List<Item> getByKeyword(String keyword)
+    public List<Item> getByKeywords(List<String> keywords)
     {
-        return this.itemDAO.findByKeyword(keyword);
+        return this.itemDAO.findByKeywords(keywords);
     }
 
 }

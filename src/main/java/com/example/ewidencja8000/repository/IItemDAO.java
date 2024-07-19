@@ -25,5 +25,5 @@ public interface IItemDAO {
 //            " i.origin LIKE %:keyword% OR" +
 //            " i.responsible LIKE %:keyword%",
 //            nativeQuery = true)
-    List<Item> findByKeyword(String keyword);
+    List<Item> findByKeywords(List<String> keywords);
 }

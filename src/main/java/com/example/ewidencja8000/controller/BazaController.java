@@ -102,7 +102,8 @@ public class BazaController {
     public String search(@RequestParam String keyword, Model model)
     {
         if (keyword != null) {
-            List<Item> list = itemService.getByKeyword(keyword);
+            List<String> keywords = List.of(keyword.split("\\s+"));
+            List<Item> list = itemService.getByKeywords(keywords);
             model.addAttribute("items", list);
             model.addAttribute("keyword",keyword);
         } else {

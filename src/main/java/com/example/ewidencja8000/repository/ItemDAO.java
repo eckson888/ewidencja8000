@@ -7,6 +7,7 @@ import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -71,14 +72,19 @@ public class ItemDAO implements IItemDAO {
 
 
     @Override
-    public List<Item> findByKeyword(String keyword) {
-        TypedQuery<Item> query = entityManager.createQuery(SEARCH_BY_ALL, Item.class);
-        query.setParameter("keyword", keyword.toUpperCase().replaceAll("\\s+",""));
-        try {
-            return query.getResultList();
-        } catch (NoResultException e) {
-            return null;
+    public List<Item> findByKeywords(List<String> keywords) {
+        List<Item> itemList = new ArrayList<>();
+        for(String keyword : keywords) {
+            TypedQuery<Item> query = entityManager.createQuery(SEARCH_BY_ALL, Item.class);
+            query.setParameter("keyword", keyword.toUpperCase());    //.replaceAll("\\s+","") - wywala puste znaki - nie moze tak byc bo w odpowiedzialnym, jest IMIE NAZWISKO
+            try {
+                 itemList.addAll(query.getResultList());
+            } catch (NoResultException e) {
+                return null;
+            }
         }
+        return itemList.stream().distinct().toList();
+
     }
 
 }
