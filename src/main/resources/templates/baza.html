@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
+    <base href="/">
     <link rel="stylesheet" th:href="@{styles/baza-style.css}"/>
-    <script type="text/javascript" th:src="@{/js/factoid-page.js}"></script>   TODO
+    <script type="text/javascript" th:src="@{/scripts/baza-script.js}"></script>
     <script src="/static/scripts/baza-script.js"></script>
     <title>Ewidencja 8000 - ULTIMATE</title>
 </head>
@@ -119,23 +120,18 @@
     </form>
 
     <form method="get" th:action="@{/baza/search}" >
-        <input name="keyword" placeholder="Szukaj" size="50" th:value="${keyword}" type="text" class="searchInput">
+        <input name="keyword" placeholder="Szukaj..." th:value="${keyword}" type="text" class="searchInput">
         <button type="submit" class="searchButton">Search</button>
     </form>
 
-    <div class="dropdown">
-        <button onclick="myFunction()" class="dropbtn">Sortuj</button>
-        <div id="myDropdown" class="dropdown-content">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
-        </div>
-    </div>
+
 
     <form th:action="@{/logout}" method="post">
-        <button type="submit" style="float: right; margin: 25px 10px 0px 10px;">Wyloguj się</button>
+        <button type="submit"  class="logoutButton">Wyloguj się</button>
     </form>
-    <a sec:authorize="hasAuthority('ADMIN')" class="adminButton" href="/adminpanel">Admin Panel</a>
+    <form sec:authorize="hasAuthority('ADMIN')" th:action="@{/adminpanel}" method="get">
+        <button type="submit"  class="adminButton">Admin Panel</button>
+    </form>
 </div>
 
 <h2>Lista sprzetu</h2>
@@ -162,11 +158,22 @@
             <td th:text="${item.origin}"></td>
             <td th:text="${item.current}"></td>
             <td th:text="${item.responsible}"></td>
-            <td>
-                <button></button>
-                <button></button>
-                <button></button>
-                <button></button>
+            <td style="align-items:center; justify-content:center;">
+                <div style="display: flex; align-items:center; justify-content:center;">
+                    <form th:action="@{/baza/edit/{id}(id=${item.id})}" method="get">
+                        <button class="editButton">Edytuj</button>
+                    </form>
+                    <form th:action="@{/baza/move/{id}(id=${item.id})}" method="get">
+                        <button class="moveButton">Przenies</button>
+                    </form>
+                    <form th:action="@{/baza/copy/{id}(id=${item.id})}" method="get">
+                        <button class="copyButton">Kopiuj</button>
+                    </form>
+                    <form th:action="@{/baza/delete}" method="post">
+                        <button class="deleteButton">Usun</button>
+                    </form>
+
+                </div>
             </td>
         </tr>
     </table>

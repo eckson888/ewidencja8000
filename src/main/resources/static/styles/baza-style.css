@@ -7,6 +7,8 @@ html
     {
         background-color: rgba(0, 0, 0, 1);
         background-image: linear-gradient(116deg, rgba(0, 0, 0, 1) 0%, rgba(86, 17, 92, 1) 89%, rgba(86, 17, 92, 1) 87%);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
         text-shadow: 1px 1px 17px rgba(0, 0, 0, 1);
         font-family: monospace;
         height: 100%;
@@ -28,9 +30,43 @@ html
 
     }
     .addButton{
-        float:left;
-        margin: 25px 10px 0px 10px;
+        margin: 23.5px 3px 0px 3px;
+        float: left;
+        transition-duration: 0.4s;
+        text-decoration: none;
+        border:none;
+        background-color: transparent;
+        color: white;
+        font-size: 15px;
+        border: 2px solid #490e4e;
+        border-radius: 2px;
+        font-family: monospace;
+        cursor: pointer;
     }
+    .addButton:hover{
+            color: white;
+            background-color: #490e4e;
+        }
+
+    .adminButton{
+        margin: 23.5px 3px 0px 3px;
+        float: left;
+        transition-duration: 0.4s;
+        text-decoration: none;
+        border:none;
+        background-color: transparent;
+        color: white;
+        font-size: 15px;
+        border: 2px solid #490e4e;
+        border-radius: 2px;
+        font-family: monospace;
+        cursor: pointer;
+    }
+    .adminButton:hover{
+            color: white;
+            background-color: #490e4e;
+        }
+
 
     .adminButton{
         float:right;
@@ -39,37 +75,147 @@ html
         color: white;
     }
 
-    .logoutButton:
-    {
+    .logoutButton{
         margin: 25px 10px 0px 10px;
-        float: left;
+        float: right;
+        transition-duration: 0.4s;
+        text-decoration: none;
+        border:none;
+        background-color: transparent;
+        color: white;
+        border: 2px solid #631b17;
+        font-family: monospace;
+        font-size: 15px;
+        cursor: pointer;
+        border-radius: 2px;
+    }
+    .logoutButton:hover{
+        color: white;
+        background-color: #631b17;
     }
 
     .searchInput{
-        margin: 25px 3px 0px 10px;
-        float: left;
+
+          float: left;
+          padding: 1px;
+          border: none;
+          margin: 23px 3px 0px 10px;
+          font-size: 17px;
+          background-color: #242322;
+          color:white;
+          font-family: monospace;
+          border: 2px solid #490e4e;
+          border-radius: 4px;
+          transition: width 0.4s ease-in-out;
+          width: 30%;
+          font-size: 17px;
+          text-shadow: 1px 1px 17px rgba(0, 0, 0, 1);
+    }
+    .searchInput:focus{
+        width: 30%;
     }
 
     .searchButton{
-        margin: 25px 3px 0px 3px;
+        margin: 23.5px 3px 0px 3px;
         float: left;
+        transition-duration: 0.4s;
+        text-decoration: none;
+        border:none;
+        background-color: transparent;
+        color: white;
+        font-size: 15px;
+        border: 2px solid #490e4e;
+        border-radius: 2px;
+        font-family: monospace;
+        cursor: pointer;
     }
-    .sortButton{
-        margin: 25px 10px 0px 3px;
+    .searchButton:hover{
+        color: white;
+        background-color: #490e4e;
+    }
+    .editButton{
         float: left;
+        transition-duration: 0.4s;
+        text-decoration: none;
+        border:none;
+        background-color: transparent;
+        color: white;
+        font-size: 15px;
+        border: 2px solid #490e4e;
+        font-family: monospace;
+        font-size: 12px;
+        cursor: pointer;
     }
-    .dropdown-content {
-     display: none;
-     position: absolute;
-     background-color: #f1f1f1;
-     min-width: 160px;
-     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-     z-index: 1;
+    .editButton:hover{
+        color: white;
+        background-color: #490e4e;
     }
-    .show {display:block;}
+    .moveButton{
+            float: left;
+            transition-duration: 0.4s;
+            text-decoration: none;
+            border:none;
+            background-color: transparent;
+            color: white;
+            font-size: 15px;
+            border: 2px solid #490e4e;
+            font-family: monospace;
+            font-size: 12px;
+            cursor: pointer;
+    }
+    .moveButton:hover{
+        color: white;
+        background-color: #490e4e;
+    }
+
+    .copyButton{
+            float: left;
+            transition-duration: 0.4s;
+            text-decoration: none;
+            border:none;
+            background-color: transparent;
+            color: white;
+            font-size: 15px;
+            border: 2px solid #490e4e;
+            font-family: monospace;
+            font-size: 12px;
+            cursor: pointer;
+    }
+    .copyButton:hover{
+        color: white;
+        background-color: #490e4e;
+    }
+
+    .deleteButton{
+            float: left;
+            transition-duration: 0.4s;
+            text-decoration: none;
+            border:none;
+            background-color: transparent;
+            color: white;
+            font-size: 15px;
+            border: 2px solid #631b17;
+            font-family: monospace;
+            font-size: 12px;
+            cursor: pointer;
+    }
+    .deleteButton:hover{
+        color: white;
+        background-color: #631b17;
+    }
+
 
     table.itemTable td, table.itemTable th
     {
         padding:5px 10px 5px 10px;
+        text-align: center
+
 
     }
+    .itemTable  {
+        width: 100%;
+
+    }
+
+
+
