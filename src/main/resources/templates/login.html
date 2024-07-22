@@ -1,22 +1,12 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:method="http://www.w3.org/1999/xhtml">
 <head>
+    <base href="/">
+    <link rel="stylesheet" th:href="@{styles/baza-style.css}"/>
+    <script type="text/javascript" th:src="@{/scripts/baza-script.js}"></script>
+    <script src="/static/scripts/baza-script.js"></script>
     <title>Login</title>
 </head>
-
-<style>
-    html{
-    height: 100%;
-    color: white;
-    }
-    body
-    {
-    background-color: rgba(33, 33, 33, 1);
-    background-image: linear-gradient(180deg, rgba(33, 33, 33, 1) 0%, rgba(57, 57, 57, 1) 50%, rgba(0, 0, 0, 1) 100%);
-height: 100%;
-    }
-</style>
-
 <body>
 <div th:if="${errorMessage}" th:text="${errorMessage}" class="msg"></div>
 <div th:if="${logoutMessage}" th:text="${logoutMessage}" class="msg"></div>

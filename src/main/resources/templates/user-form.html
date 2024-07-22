@@ -1,22 +1,41 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
-    <style>
-        html{
-    height: 100%;
-    color: white;
-    }
-        body
-        {
-        background-color: rgba(33, 33, 33, 1);
-        background-image: linear-gradient(180deg, rgba(33, 33, 33, 1) 0%, rgba(57, 57, 57, 1) 50%, rgba(0, 0, 0, 1) 100%);
-height: 100%;
-        }
-    </style>
+    <base href="/">
+    <link rel="stylesheet" th:href="@{styles/baza-style.css}"/>
+    <script type="text/javascript" th:src="@{/scripts/baza-script.js}"></script>
+    <script src="/static/scripts/baza-script.js"></script>
+    <title>Ewidencja 8000 - ULTIMATE</title>
+
 </head>
 <body>
-    <a class="nav-item" href="/adminpanel" style="float:right; margin: 10px;">Admin enabled</a>
+<div class="navigationBar">
+    <h3 class="header1">Ewidencja UML 8000 ULTIMATE</h3>
+
+    <form th:action="@{/baza/add}" method="get">
+        <button type="submit" class="addButton">Dodaj nowy sprzet</button>
+    </form>
+
+    <form method="get" th:action="@{/baza/search}" >
+        <input name="keyword" placeholder="Szukaj" size="50" th:value="${keyword}" type="text" class="searchInput">
+        <button type="submit" class="searchButton">Search</button>
+    </form>
+
+    <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">Sortuj</button>
+        <div id="myDropdown" class="dropdown-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+        </div>
+    </div>
+
+    <form th:action="@{/logout}" method="post">
+        <button type="submit" style="float: right; margin: 25px 10px 0px 10px;">Wyloguj się</button>
+    </form>
+    <a sec:authorize="hasAuthority('ADMIN')" class="adminButton" href="/adminpanel">Admin Panel</a>
 </div>
+
 <div class="userForm">
     <form method="post" th:object="${user}" class="registerForm">
         <input type="text" placeholder="login" class="input-field" th:field="*{username}" id="username" required>

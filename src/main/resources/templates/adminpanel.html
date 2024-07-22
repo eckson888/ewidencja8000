@@ -1,31 +1,41 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
+    <base href="/">
+    <link rel="stylesheet" th:href="@{styles/baza-style.css}"/>
+    <script type="text/javascript" th:src="@{/scripts/baza-script.js}"></script>
+    <script src="/static/scripts/baza-script.js"></script>
+    <title>Ewidencja 8000 - ULTIMATE</title>
 </head>
-<style>
-    html
-    {
-    height: 100%;
-    color: white;
-    }
-    body
-    {
-    background-color: rgba(33, 33, 33, 1);
-    background-image: linear-gradient(180deg, rgba(33, 33, 33, 1) 0%, rgba(57, 57, 57, 1) 50%, rgba(0, 0, 0, 1) 100%);
-    height: 100%;
-    }
-</style>
 <body>
-    <form method="get" th:action="@{adminpanel/add}">
-        <input type="submit" value="Dodaj uzytkownika" class="newUserButton">
-    </form>
-    <form th:action="@{/logout}" method="post" style="float: right;">
+<div class="navigationBar">
+    <h3 class="header1">Ewidencja UML 8000 ULTIMATE</h3>
+
+    <div class="adminButtons">
+        <form th:action="@{/adminpanel/add}" method="get">
+            <button type="submit" class="addButton">Dodaj Użytkownika</button>
+        </form>
+
+        <form th:action="@{/baza/add}" method="get">
+            <button type="submit" class="addButton">Dodaj nowy sprzęt</button>
+        </form>
+
+        <form action="baza" method="get">
+            <input type="submit" value="Baza" class="addButton" />
+        </form>
+        <form action="adminpanel" method="get">
+            <input type="submit" value="Admin Enabled" class="adminButton">
+        </form>
+        
+
+    <form th:action="@{/logout}" method="post">
         <button type="submit" class="logoutButton">Wyloguj się</button>
     </form>
 
-    <a class="nav-item" href="/adminpanel" style="float:right; margin: 10px;">Admin enabled</a>
+    </div>
 </div>
-    <h2>Lista userow</h2>
+
+<h2 class="header2">Lista userow</h2>
 <div class="usersDisplay" style="display: flex;">
     <div th:each="user : ${users}" class="usersCard" style="margin: 10px; padding: 10px; border: 2px solid black;">
         <p class="user-username" th:text="${user.username}">User: </p>
