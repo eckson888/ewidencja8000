@@ -21,7 +21,9 @@ public class SecurityConfig {
                         .requestMatchers("/resources/**").permitAll()
                         .requestMatchers("/h2-console/**").permitAll()
                         .requestMatchers("/adminpanel/**").hasAuthority("ADMIN")
+                        .requestMatchers("/styles/**").permitAll()
                         .anyRequest().authenticated()
+
                 )
                 .csrf(csrf -> csrf.disable())
                 .headers(headers -> headers.frameOptions(HeadersConfigurer.FrameOptionsConfig::sameOrigin))
