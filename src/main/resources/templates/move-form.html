@@ -10,6 +10,10 @@
 <body>
 <div class="navigationBar">
     <h3 class="header1">Ewidencja UML 8000 ULTIMATE</h3>
+
+    <form th:action="@{/baza}" method="get">
+        <button type="submit" class="addButton">Powrót</button>
+    </form>
     <form th:action="@{/logout}" method="post">
         <button type="submit" class="logoutButton">Wyloguj się</button>
     </form>
@@ -18,16 +22,18 @@
 
 <div class="itemFormContainer">
     <form method="post" th:object="${item}" class="itemForm">
-        <input type="text" placeholder="Skad?" class="input-field" th:field="*{origin}" id="originInput" oninput="this.value = this.value.toUpperCase()" required>
-        <input type="text" placeholder="Gdzie teraz" class="input-field" th:field="*{current}" id="currentInput" oninput="this.value = this.value.toUpperCase()" required>
-        <input type="text" placeholder="Kto Odpowiedzialny?" class="input-field" th:field="*{responsible}" oninput="this.value = this.value.toUpperCase()" id="responsibleInput">
-<!--        <input type="number" placeholder="ilosc" class="input-field" th:field="*{quantity}" id="quantityInput" required>-->
+        <input type="text"  placeholder="Skad?" class="input-field"  th:field="*{origin}" id="originInput" oninput="this.value = this.value.toUpperCase()" required>
+        <input type="text" placeholder="Gdzie teraz" class="input-field"  th:field="*{current}"  id="currentInput" oninput="this.value = this.value.toUpperCase()" required>
+        <input type="text" placeholder="Kto Odpowiedzialny?"  class="input-field" th:field="*{responsible}" oninput="this.value = this.value.toUpperCase()" id="responsibleInput">
         <input type="hidden" th:field="*{brand}" th:value="${item.brand}" />
         <input type="hidden" th:field="*{model}" th:value="${item.model}" />
         <input type="hidden" th:field="*{serial}" th:value="${item.serial}" />
         <input type="hidden" th:field="*{imageURL}" th:value="${item.imageURL}" />
-        <input type="submit" value="Dodaj" class="addButton">
+        <input type="submit" value="Przenieś" class="addButton">
     </form>
 </div>
+
+
+
 </body>
 </html>
