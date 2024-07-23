@@ -14,20 +14,20 @@
 <h1 class="loginHeader">Logowanie</h1>
 
 <form th:action="@{/login}" method="post" class="loginPanel">
-    <div>
+    <div class="loginDiv">
         <!--        <label for="username">Nazwa użytkownika:</label>-->
         <input type="text" class="loginInput" id="username" name="username" placeholder="username" required/>
     </div>
-    <div>
+    <div class="loginDiv">
         <!--        <label for="password">Hasło:</label>-->
-        <input type="password" class="loginInput" id="password" name="password" placeholder="password" required />
+        <input type="password" class="passwordInput" id="password" name="password" placeholder="password" required />
     </div>
-    <div>
+    <div class="loginDiv">
         <button type="submit" class="loginButton">Zaloguj się</button>
     </div>
-    <div>
-        <button onclick="location.href='/register'" type="button" class="registerButton">Zarejestruj sie</button>
-    </div>
+<!--    <div class="loginDiv">-->
+<!--        <button onclick="location.href='/register'" type="button" class="registerButton">Zarejestruj sie</button>-->
+<!--    </div>-->
 </form>
 </body>
 </html>
