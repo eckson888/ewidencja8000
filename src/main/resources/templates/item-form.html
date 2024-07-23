@@ -8,6 +8,17 @@
     <title>Dodawanie Sprzętu..</title>
 </head>
 <body>
+<div class="navigationBar">
+    <h3 class="header1">Ewidencja UML 8000 ULTIMATE</h3>
+
+
+    <form th:action="@{/baza}" method="get">
+        <button type="submit" class="addButton">Powrót</button>
+    </form>
+
+    <form th:action="@{/logout}" method="post">
+        <button type="submit"  class="logoutButton">Wyloguj się</button>
+    </form>
 </div>
 <div class="itemFormContainer">
     <form method="post" th:object="${item}" class="itemForm">

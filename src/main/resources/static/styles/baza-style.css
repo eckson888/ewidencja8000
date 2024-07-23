@@ -133,6 +133,7 @@
        font-family: monospace;
        font-size: 12px;
        cursor: pointer;
+        margin:auto 5px auto 5px;
    }
    .editButton:hover{
        color: white;
@@ -149,6 +150,7 @@
            border: 2px solid #490e4e;
            font-family: monospace;
            font-size: 12px;
+        margin:auto 5px auto 5px;
            cursor: pointer;
    }
    .moveButton:hover{
@@ -163,6 +165,7 @@
            background-color: transparent;
            color: white;
            font-size: 15px;
+        margin:auto 5px auto 5px;
            border: 2px solid #490e4e;
            font-family: monospace;
            font-size: 12px;
@@ -180,6 +183,7 @@
            background-color: transparent;
            color: white;
            font-size: 15px;
+        margin:auto 5px auto 5px;
            border: 2px solid #631b17;
            font-family: monospace;
            font-size: 12px;
@@ -209,6 +213,7 @@
        justify-content: space-between;
         overflow:hidden;
         margin: auto;
+        background-color: #00000030
 
     }
 
@@ -219,8 +224,39 @@
     }
 
     .adminButtons{
-        margin: auto 10% auto 10%;
         float: left;
         display: flex;
+    }
+    .itemForm
+    {
+        border: solid 1px #ffffff66;
+        border-radius: 10px;
+        display: grid;
+        justify-content: center;
+        padding: 10px;
+        background-color: #0000001d;
+        margin:20px;
+        margin-top:100px;
+        -webkit-box-shadow: 0px 0px 68px 9px rgba(0, 0, 0, 1);
+        -moz-box-shadow: 0px 0px 68px 9px rgba(0, 0, 0, 1);
+        box-shadow: 0px 0px 68px 9px rgba(0, 0, 0, 1);
+    }
+    .itemFormContainer
+    {
+        width:100%;
+        display:flex;
+        justify-content:center;
+    }
+
+    .input-field{
+        height:20px;
+        font-size:18px;
+        margin:10px auto 10px auto;
+        background-color:#40404000;
+        color:white;
+        border: solid 1px #ffffff66;
+        border-radius:5px;
+        text-align:center;
+
 
     }

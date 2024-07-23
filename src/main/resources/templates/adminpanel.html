@@ -16,23 +16,25 @@
             <button type="submit" class="addButton">Dodaj Użytkownika</button>
         </form>
 
-        <form th:action="@{/baza/add}" method="get">
-            <button type="submit" class="addButton">Dodaj nowy sprzęt</button>
-        </form>
+<!--        <form th:action="@{/baza/add}" method="get">-->
+<!--            <button type="submit" class="addButton">Dodaj nowy sprzęt</button>-->
+<!--        </form>-->
 
         <form action="baza" method="get">
-            <input type="submit" value="Baza" class="addButton" />
+            <input type="submit" value="Baza sprzętu" class="addButton" />
         </form>
-        <form action="adminpanel" method="get">
-            <input type="submit" value="Admin Enabled" class="adminButton">
-        </form>
-        
 
-    <form th:action="@{/logout}" method="post">
-        <button type="submit" class="logoutButton">Wyloguj się</button>
-    </form>
 
     </div>
+
+
+    <form th:action="@{/logout}" method="post">
+        <button type="submit" class="logoutButton" style="float:right;">Wyloguj się</button>
+    </form>
+
+    <form action="adminpanel" method="get">
+        <input type="submit" value="Admin Enabled" class="adminButton" style="float:right;">
+    </form>
 </div>
 
 <h2 class="header2">Lista userow</h2>
