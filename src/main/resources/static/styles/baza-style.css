@@ -240,22 +240,26 @@
         -webkit-box-shadow: 0px 0px 68px 9px rgba(0, 0, 0, 1);
         -moz-box-shadow: 0px 0px 68px 9px rgba(0, 0, 0, 1);
         box-shadow: 0px 0px 68px 9px rgba(0, 0, 0, 1);
+        font-family: monospace;
     }
     .itemFormContainer
     {
         width:100%;
         display:flex;
         justify-content:center;
+        font-family: monospace;
     }
 
     .input-field{
         height:20px;
-        font-size:18px;
+        font-size:17px;
         margin:10px auto 10px auto;
         background-color:#40404000;
         color:white;
         border: solid 1px #ffffff66;
         border-radius:5px;
         text-align:center;
+        font-family: monospace;
+
     }
 
