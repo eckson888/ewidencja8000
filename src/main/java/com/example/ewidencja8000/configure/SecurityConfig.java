@@ -22,6 +22,7 @@ public class SecurityConfig {
                         .requestMatchers("/h2-console/**").permitAll()
                         .requestMatchers("/adminpanel/**").hasAuthority("ADMIN")
                         .requestMatchers("/styles/**").permitAll()
+                        .requestMatchers("/scripts/**").permitAll()
                         .anyRequest().authenticated()
 
                 )

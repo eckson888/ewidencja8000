@@ -2,9 +2,11 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <base href="/">
+
     <link rel="stylesheet" th:href="@{styles/baza-style.css}"/>
-    <script type="text/javascript" th:src="@{/scripts/baza-script.js}"></script>
-    <script src="/static/scripts/baza-script.js"></script>
+    <script type="text/javascript" src="/scripts/baza-script.js"></script>
+
+
     <title>Ewidencja 8000 - ULTIMATE</title>
 </head>
 
@@ -64,10 +66,25 @@
 <!--                    <form th:action="@{/baza/delete/{id}(id=${item.id})}" method="post">-->
 <!--                        <button class="deleteButton">Usun</button>-->
 <!--                    </form>-->
-                    <form method="post" th:action="@{/baza/delete}">
-                        <input type="hidden" th:name="id" th:value="${item.id}" />
-                        <button class="deleteButton">USUN</button>
-                    </form>
+                    <button onclick="document.getElementById('id01').style.display='block'" class="deleteButton">USUN</button>
+
+                    <div id="id01" class="modal">
+                        <form class="modal-content" th:action="@{/baza/delete}" method="post">
+                            <input type="hidden" th:name="id" th:value="${item.id}"/>
+                            <div class="container">
+                                <h1>Usunąć sprzęt z bazy?</h1>
+                                <p>Czy na pewno chcesz usunąć ten sprzęt?</p>
+                                <div class="clearfix">
+                                    <button type="button" class="deleteButton" onclick="document.getElementById('id01').style.display='none'">Powrót</button>
+                                    <button type="submit" class="deleteButton">USUŃ</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+
+
+
 
                 </div>
             </td>

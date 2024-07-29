@@ -303,3 +303,53 @@
        background-image: none;
     }
 
+
+
+
+    /* Add padding and center-align text to the container */
+    .container {
+      padding: 16px;
+      text-align: center;
+    }
+
+    /* The Modal (background) */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: transparent;
+      padding-top: 50px;
+
+
+    }
+
+    /* Modal Content/Box */
+    .modal-content {
+      background-color: #212121;
+      margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+      width: 30%; /* Could be more or less, depending on screen size */
+      animation: fadeBackground 0.1s;
+      animation-fill-mode: forwards;
+    }
+
+    /* Clear floats - nw co to robi*/
+    .clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+@keyframes fadeBackground {
+  from { background-color: transparent;
+    color:transparent;
+    border:none;
+  }
+  to { background-color: #212121;
+    color:white;
+   }
+}
