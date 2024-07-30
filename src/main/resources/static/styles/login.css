@@ -1,15 +1,15 @@
 body
 {
-   background-color: rgba(0, 0, 0, 1);
-   background-image: linear-gradient(116deg, rgba(0, 0, 0, 1) 0%, rgba(86, 17, 92, 1) 89%, rgba(86, 17, 92, 1) 87%);
-   background-repeat: no-repeat;
-   background-attachment: fixed;
-   text-shadow: 1px 1px 17px rgba(0, 0, 0, 1);
-   font-family: monospace;
-   height: 100%;
-   margin-top: 70px;
-   padding: 0px;
-   color: white;
+    background-color: rgba(0, 0, 0, 1);
+    background-image: linear-gradient(116deg, rgba(0, 0, 0, 1) 0%, rgba(86, 17, 92, 1) 89%, rgba(86, 17, 92, 1) 87%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    text-shadow: 1px 1px 17px rgba(0, 0, 0, 1);
+    font-family: monospace;
+    height: 100%;
+    margin-top: 70px;
+    padding: 0px;
+    color: white;
 }
 
 .loginPanel{
@@ -27,34 +27,33 @@ body
     width: 260px;
 }
 .loginDiv{
-   display : flex;
-   justify-content: center;
+    display : flex;
+    justify-content: center;
 }
 .loginHeader{
     display : flex;
     justify-content: center;
     font-family: monospace;
-text-shadow: 4px 4px 6px rgba(113, 80, 115, 1);
+    text-shadow: 4px 4px 6px rgba(113, 80, 115, 1);
 }
 .loginButton{
-   transition-duration: 0.4s;
-   text-decoration: none;
-   border:none;
-   background-color: transparent;
-   color: white;
-   font-size: 15px;
-   border: 2px solid #490e4e;
-   border-radius: 2px;
-   font-family: monospace;
-   cursor: pointer;
-   margin-bottom: 16px;
+    transition-duration: 0.4s;
+    text-decoration: none;
+    border:none;
+    background-color: transparent;
+    color: white;
+    font-size: 15px;
+    border: 2px solid #490e4e;
+    border-radius: 2px;
+    font-family: monospace;
+    cursor: pointer;
+    margin-bottom: 16px;
 }
 .loginButton:hover{
-   color: white;
-   background-color: #490e4e;
+    color: white;
+    background-color: #490e4e;
 }
 .passwordInput{
-
     height:17px;
     font-size:17px;
     background-color: white;
@@ -64,8 +63,8 @@ text-shadow: 4px 4px 6px rgba(113, 80, 115, 1);
     font-family: monospace;
     width:90%;
     margin-bottom: 10px;
-
 }
+
 .loginInput{
     height:17px;
     font-size:17px;
@@ -80,5 +79,4 @@ text-shadow: 4px 4px 6px rgba(113, 80, 115, 1);
 .msg{
     margin-bottom: 10px;
     text-align: center;
-
 }

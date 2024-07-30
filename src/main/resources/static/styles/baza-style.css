@@ -1,355 +1,427 @@
-    html
-    {
-    height: 100%;
-       color: white;
-   }
-   body
-   {
-       background-color: rgba(0, 0, 0, 1);
-       background-image: linear-gradient(116deg, rgba(0, 0, 0, 1) 0%, rgba(86, 17, 92, 1) 89%, rgba(86, 17, 92, 1) 87%);
-       background-repeat: no-repeat;
-       background-attachment: fixed;
-       text-shadow: 1px 1px 17px rgba(0, 0, 0, 1);
-       font-family: monospace;
-       height: 100%;
-       margin: 0px;
-       padding: 0px;
-   }
-   .navigationBar{
-       height: 70px;
-       width: 100%;
-       background-color: black;
-       color: white;
-       font-size: 15px;
-    }
-   .header1{
-       color: white;
-       float: left;
-       margin: 25px 10px 0px 10px;
-    }
-   .addButton{
-       margin: 23.5px 3px 0px 3px;
-       float: left;
-       transition-duration: 0.4s;
-       text-decoration: none;
-       border:none;
-       background-color: transparent;
-       color: white;
-       font-size: 15px;
-       border: 2px solid #490e4e;
-       border-radius: 2px;
-       font-family: monospace;
-       cursor: pointer;
-   }
-   .addButton:hover{
-           color: white;
-           background-color: #490e4e;
-       }
-    .adminButton{
-       margin: 23.5px 3px 0px 3px;
-       float: left;
-       transition-duration: 0.4s;
-       text-decoration: none;
-       border:none;
-       background-color: transparent;
-       color: white;
-       font-size: 15px;
-       border: 2px solid #490e4e;
-       border-radius: 2px;
-       font-family: monospace;
-       cursor: pointer;
-   }
-   .adminButton:hover{
-           color: white;
-           background-color: #490e4e;
-       }
+html
+{
+height: 100%;
+   color: white;
+}
+body
+{
+   background-color: rgba(0, 0, 0, 1);
+   background-image: linear-gradient(116deg, rgba(0, 0, 0, 1) 0%, rgba(86, 17, 92, 1) 89%, rgba(86, 17, 92, 1) 87%);
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   text-shadow: 1px 1px 17px rgba(0, 0, 0, 1);
+   font-family: monospace;
+   height: 100%;
+   margin: 0px;
+   padding: 0px;
+}
+.navigationBar{
+   height: 70px;
+   width: 100%;
+   background-color: black;
+   color: white;
+   font-size: 15px;
+}
+.header1{
+   color: white;
+   float: left;
+   margin: 25px 10px 0px 10px;
+}
 
+/*
+-----------------------------------------
+*****************BUTTONS*****************
+-----------------------------------------
+*/
 
-    .logoutButton{
-        margin: 23.5px 3px 0px 3px;
-       float: right;
-       transition-duration: 0.4s;
-       text-decoration: none;
-       border:none;
-       background-color: transparent;
-       color: white;
-       border: 2px solid #631b17;
-       font-family: monospace;
-       font-size: 15px;
-       cursor: pointer;
-       border-radius: 2px;
-   }
-   .logoutButton:hover{
-       color: white;
-       background-color: #631b17;
-   }
-    .searchInput{
-          float: left;
-         padding: 1px;
-         border: none;
-         margin: 23px 3px 0px 10px;
-         font-size: 17px;
-         background-color: #242322;
-         color:white;
-         font-family: monospace;
-         border: 2px solid #490e4e;
-         border-radius: 4px;
-         transition: width 0.4s ease-in-out;
-         width: 30%;
-         font-size: 17px;
-         text-shadow: 1px 1px 17px rgba(0, 0, 0, 1);
-   }
-   .searchInput:focus{
-       width: 30%;
-   }
-    .searchButton{
-       margin: 23.5px 3px 0px 3px;
-       float: left;
-       transition-duration: 0.4s;
-       text-decoration: none;
-       border:none;
-       background-color: transparent;
-       color: white;
-       font-size: 15px;
-       border: 2px solid #490e4e;
-       border-radius: 2px;
-       font-family: monospace;
-       cursor: pointer;
-
-   }
-   .searchButton:hover{
+.addButton{
+   margin: 23.5px 3px 0px 3px;
+   float: left;
+   transition-duration: 0.4s;
+   text-decoration: none;
+   border:none;
+   background-color: transparent;
+   color: white;
+   font-size: 15px;
+   border: 2px solid #490e4e;
+   border-radius: 2px;
+   font-family: monospace;
+   cursor: pointer;
+}
+.addButton:hover{
        color: white;
        background-color: #490e4e;
-   }
-   .editButton{
-       float: left;
-       transition-duration: 0.4s;
-       text-decoration: none;
-       border:none;
-       background-color: transparent;
-       color: white;
-       font-size: 15px;
-       border: 2px solid #490e4e;
-       font-family: monospace;
-       font-size: 12px;
-       cursor: pointer;
-        margin:auto 5px auto 5px;
-   }
-   .editButton:hover{
-       color: white;
-       background-color: #490e4e;
-   }
-   .moveButton{
-           float: left;
-           transition-duration: 0.4s;
-           text-decoration: none;
-           border:none;
-           background-color: transparent;
-           color: white;
-           font-size: 15px;
-           border: 2px solid #490e4e;
-           font-family: monospace;
-           font-size: 12px;
-        margin:auto 5px auto 5px;
-           cursor: pointer;
-   }
-   .moveButton:hover{
+}
+
+.adminButton{
+   margin: 23.5px 3px 0px 3px;
+   float: left;
+   transition-duration: 0.4s;
+   text-decoration: none;
+   border:none;
+   background-color: transparent;
+   color: white;
+   font-size: 15px;
+   border: 2px solid #490e4e;
+   border-radius: 2px;
+   font-family: monospace;
+   cursor: pointer;
+}
+.adminButton:hover{
        color: white;
        background-color: #490e4e;
-   }
-    .copyButton{
-           float: left;
-           transition-duration: 0.4s;
-           text-decoration: none;
-           border:none;
-           background-color: transparent;
-           color: white;
-           font-size: 15px;
-        margin:auto 5px auto 5px;
-           border: 2px solid #490e4e;
-           font-family: monospace;
-           font-size: 12px;
-           cursor: pointer;
-   }
-   .copyButton:hover{
-       color: white;
-       background-color: #490e4e;
-   }
-    .deleteButton{
-           float: left;
-           transition-duration: 0.4s;
-           text-decoration: none;
-           border:none;
-           background-color: transparent;
-           color: white;
-           font-size: 15px;
-        margin:auto 5px auto 5px;
-           border: 2px solid #631b17;
-           font-family: monospace;
-           font-size: 12px;
-           cursor: pointer;
-   }
-   .deleteButton:hover{
-       color: white;
-       background-color: #631b17;
-   }
+}
 
-   table.itemTable td, table.itemTable th, table.itemTable
-   {
-       padding:5px 10px 5px 10px;
-       text-align: center;
-       border: solid 1px #ffffff80;
-        border-collapse:collapse;
+.logoutButton{
+   margin: 23.5px 3px 0px 3px;
+   float: right;
+   transition-duration: 0.4s;
+   text-decoration: none;
+   border:none;
+   background-color: transparent;
+   color: white;
+   border: 2px solid #631b17;
+   font-family: monospace;
+   font-size: 15px;
+   cursor: pointer;
+   border-radius: 2px;
+}
+.logoutButton:hover{
+   color: white;
+   background-color: #631b17;
+}
 
-    }
+.searchButton{
+   margin: 23.5px 3px 0px 3px;
+   float: left;
+   transition-duration: 0.4s;
+   text-decoration: none;
+   border:none;
+   background-color: transparent;
+   color: white;
+   font-size: 15px;
+   border: 2px solid #490e4e;
+   border-radius: 2px;
+   font-family: monospace;
+   cursor: pointer;
 
-    table.itemTable th{
-        font-size:17px;
-    }
+}
+.searchButton:hover{
+   color: white;
+   background-color: #490e4e;
+}
 
+.editButton{
+   float: left;
+   transition-duration: 0.4s;
+   text-decoration: none;
+   border:none;
+   background-color: transparent;
+   color: white;
+   font-size: 15px;
+   border: 2px solid #490e4e;
+   font-family: monospace;
+   font-size: 12px;
+   cursor: pointer;
+    margin:auto 5px auto 5px;
+}
+.editButton:hover{
+   color: white;
+   background-color: #490e4e;
+}
 
-   .itemTable  {
-       width: 98%;
-       justify-content: space-between;
-        overflow:hidden;
-        margin: auto;
-        background-color: #00000030
+.moveButton{
+   float: left;
+   transition-duration: 0.4s;
+   text-decoration: none;
+   border:none;
+   background-color: transparent;
+   color: white;
+   font-size: 15px;
+   border: 2px solid #490e4e;
+   font-family: monospace;
+   font-size: 12px;
+   margin:auto 5px auto 5px;
+   cursor: pointer;
+}
+.moveButton:hover{
+   color: white;
+   background-color: #490e4e;
+}
 
-    }
-    .itemRow:hover{
-       background-color: #56115c;
-    }
+.copyButton{
+   float: left;
+   transition-duration: 0.4s;
+   text-decoration: none;
+   border:none;
+   background-color: transparent;
+   color: white;
+   font-size: 15px;
+   margin:auto 5px auto 5px;
+   border: 2px solid #490e4e;
+   font-family: monospace;
+   font-size: 12px;
+   cursor: pointer;
+}
+.copyButton:hover{
+   color: white;
+   background-color: #490e4e;
+}
 
-    .header2{
-        margin: 15px auto 15px auto;
-        width:100%;
-        text-align:center;
-    }
+.deleteButton{
+   float: left;
+   transition-duration: 0.4s;
+   text-decoration: none;
+   border:none;
+   background-color: transparent;
+   color: white;
+   font-size: 15px;
+   margin:auto 5px auto 5px;
+   border: 2px solid #631b17;
+   font-family: monospace;
+   font-size: 12px;
+   cursor: pointer;
+}
+.deleteButton:hover{
+   color: white;
+   background-color: #631b17;
+}
 
-    .adminButtons{
-        float: left;
-        display: flex;
-    }
-    .itemForm
-    {
-        border: solid 1px #ffffff66;
-        border-radius: 10px;
-        display: grid;
-        justify-content: center;
-        padding: 10px;
-        background-color: #0000001d;
-        margin:20px;
-        margin-top:100px;
-        -webkit-box-shadow: 0px 0px 68px 9px rgba(0, 0, 0, 1);
-        -moz-box-shadow: 0px 0px 68px 9px rgba(0, 0, 0, 1);
-        box-shadow: 0px 0px 68px 9px rgba(0, 0, 0, 1);
-        font-family: monospace;
-    }
-    .itemFormContainer
-    {
-        width:100%;
-        display:flex;
-        justify-content:center;
-        font-family: monospace;
-    }
+.cancelButton{
+    background-color: #185c12;
+    color: white;
+    cursor: pointer;
+    margin-left: 35%;
+    padding: 5px;
+    border: none;
+    transition-duration: 0.4s;
+    float: left;
+    font-family: monospace;
+    width:14%;
+    animation: fadeCancelButton 0.3s;
+}
+.cancelButton:hover{
+    background-color:#24871b;
+}
 
-    .input-field{
-        height:20px;
-        font-size:17px;
-        margin:10px auto 10px auto;
-        background-color:#40404000;
-        color:white;
-        border: solid 1px #ffffff66;
-        border-radius:5px;
-        text-align:center;
-        font-family: monospace;
+.confirmButton{
+    background-color: #631b17;
+    color: white;
+    cursor: pointer;
+    margin-left: 2%;
+    padding: 5px;
+    border: none;
+    transition-duration: 0.4s;
+    float: left;
+    font-family: monospace;
+    width: 14%;
+    animation: fadeConfirmButton 0.3s;
+}
+.confirmButton:hover{
+    background-color: #942019;
 
-    }
-    .registerForm{
-        border: solid 1px #ffffff66;
-        border-radius: 10px;
-        display: grid;
-        justify-content: center;
-        padding: 10px;
-        background-color: #0000001d;
-        margin:auto;
-        margin-top: 30px;
-        -webkit-box-shadow: 0px 0px 68px 9px rgba(0, 0, 0, 1);
-        -moz-box-shadow: 0px 0px 68px 9px rgba(0, 0, 0, 1);
-        box-shadow: 0px 0px 68px 9px rgba(0, 0, 0, 1);
-        font-family: monospace;
-        width: 260px;
-    }
-    .input-field{
-        height:17px;
-        font-size:17px;
-        background-color: white;
-        color:black;
-        border: solid 3px #490e4e;
-        border-radius:1px;
-        font-family: monospace;
-        width:90%;
-    }
-    .usersCard{
-       background-color: rgba(0, 0, 0, 1);
-       background-image: linear-gradient(116deg, rgba(0, 0, 0, 1) 0%, rgba(86, 17, 92, 1) 89%, rgba(86, 17, 92, 1) 87%);
-       margin: 10px;
-       padding: 10px;
-       border: 1px solid white;
-       border-radius: 3px;
-    }
-    .usersCard:hover{
-       background-color: #56115c;
-       background-image: none;
-    }
+}
 
-
-
-
-    /* Add padding and center-align text to the container */
-    .container {
-      padding: 16px;
-      text-align: center;
-    }
-
-    /* The Modal (background) */
-    .modal {
-      display: none; /* Hidden by default */
-      position: fixed; /* Stay in place */
-      z-index: 1; /* Sit on top */
-      left: 0;
-      top: 0;
-      width: 100%; /* Full width */
-      height: 100%; /* Full height */
-      overflow: auto; /* Enable scroll if needed */
-      background-color: transparent;
-      padding-top: 50px;
-
+@keyframes fadeCancelButton{
+    from {
+        background-color: transparent;
+        color: transparent;
 
     }
-
-    /* Modal Content/Box */
-    .modal-content {
-      background-color: #212121;
-      margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-      width: 30%; /* Could be more or less, depending on screen size */
-      animation: fadeBackground 0.1s;
-      animation-fill-mode: forwards;
+    to {
+        background-color: #185c12;
+        color: white;
     }
-
-    /* Clear floats - nw co to robi*/
-    .clearfix::after {
-      content: "";
-      clear: both;
-      display: table;
+}
+@keyframes fadeConfirmButton{
+    from {
+        background-color: transparent;
+        color: transparent;
     }
+    to {
+        background-color: #631b17;
+        color: white;
+    }
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+
+.searchInput{
+    float: left;
+    padding: 1px;
+    border: none;
+    margin: 23px 3px 0px 10px;
+    font-size: 17px;
+    background-color: #242322;
+    color:white;
+    font-family: monospace;
+    border: 2px solid #490e4e;
+    border-radius: 4px;
+    transition: width 0.4s ease-in-out;
+    width: 30%;
+    font-size: 17px;
+    text-shadow: 1px 1px 17px rgba(0, 0, 0, 1);
+}
+.searchInput:focus{
+    width: 30%;
+}
+
+table.itemTable td, table.itemTable th, table.itemTable{
+    padding:5px 10px 5px 10px;
+    text-align: center;
+    border: solid 1px #ffffff80;
+    border-collapse:collapse;
+}
+
+table.itemTable th{
+    font-size:17px;
+}
+
+.itemTable  {
+    width: 98%;
+    justify-content: space-between;
+    overflow:hidden;
+    margin: auto;
+    background-color: #00000030
+
+}
+.itemRow:hover{
+    background-color: #56115c;
+}
+
+.header2{
+    margin: 15px auto 15px auto;
+    width:100%;
+    text-align:center;
+}
+
+.adminButtons{
+    float: left;
+    display: flex;
+}
+
+.itemForm
+{
+    border: solid 1px #ffffff66;
+    border-radius: 10px;
+    display: grid;
+    justify-content: center;
+    padding: 10px;
+    background-color: #0000001d;
+    margin:20px;
+    margin-top:100px;
+    -webkit-box-shadow: 0px 0px 68px 9px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 0px 0px 68px 9px rgba(0, 0, 0, 1);
+    box-shadow: 0px 0px 68px 9px rgba(0, 0, 0, 1);
+    font-family: monospace;
+}
+
+.itemFormContainer
+{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    font-family: monospace;
+}
+
+.input-field{
+    height:20px;
+    font-size:17px;
+    margin:10px auto 10px auto;
+    background-color:#40404000;
+    color:white;
+    border: solid 1px #ffffff66;
+    border-radius:5px;
+    text-align:center;
+    font-family: monospace;
+}
+
+.registerForm{
+    border: solid 1px #ffffff66;
+    border-radius: 10px;
+    display: grid;
+    justify-content: center;
+    padding: 10px;
+    background-color: #0000001d;
+    margin:auto;
+    margin-top: 30px;
+    -webkit-box-shadow: 0px 0px 68px 9px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 0px 0px 68px 9px rgba(0, 0, 0, 1);
+    box-shadow: 0px 0px 68px 9px rgba(0, 0, 0, 1);
+    font-family: monospace;
+    width: 260px;
+}
+
+.input-field{
+    height:17px;
+    font-size:17px;
+    background-color: white;
+    color:black;
+    border: solid 3px #490e4e;
+    border-radius:1px;
+    font-family: monospace;
+    width:90%;
+}
+
+.usersCard{
+    background-color: rgba(0, 0, 0, 1);
+    background-image: linear-gradient(116deg, rgba(0, 0, 0, 1) 0%, rgba(86, 17, 92, 1) 89%, rgba(86, 17, 92, 1) 87%);
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 3px;
+}
+
+.usersCard:hover{
+    background-color: #56115c;
+    background-image: none;
+}
+
+/* Add padding and center-align text to the container */
+.container {
+    padding: 16px;
+    text-align: center;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: transparent;
+    padding-top: 50px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #212121;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    width: 30%; /* Could be more or less, depending on screen size */
+    animation: fadeBackground 0.3s;
+    animation-fill-mode: forwards;
+}
+
+/* Clear floats - nw co to robi*/
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
 
 @keyframes fadeBackground {
-  from { background-color: transparent;
-    color:transparent;
-    border:none;
-  }
-  to { background-color: #212121;
-    color:white;
-   }
+    from {
+        background-color: transparent;
+        color:transparent;
+        border:none;
+    }
+    to {
+        background-color: #212121;
+        color:white;
+    }
 }
+
