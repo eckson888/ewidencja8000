@@ -432,6 +432,7 @@ table.itemTable th{
     padding-top: 50px;
     margin: auto;
     pointer-events: none;
+    z-index: 1;
 }
 
 
