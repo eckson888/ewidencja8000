@@ -4,6 +4,7 @@
     <base href="/">
 
     <link rel="stylesheet" th:href="@{styles/baza-style.css}"/>
+    <link rel="shortcut icon" type="image/png" th:href="@{/favicon.png}"/>
     <script type="text/javascript" src="/scripts/baza-script.js"></script>
 
 
@@ -75,13 +76,30 @@
                                 <h1>Usunąć sprzęt z bazy?</h1>
                                 <p>Czy na pewno chcesz usunąć ten sprzęt?</p>
                                 <div class="clearfix">
-                                    <button type="button" class="cancelButton" onclick="document.getElementById('id01').style.display='none'">Powrót</button>
+                                    <button type="button" class="cancelButton" id="cancelRemove" onclick="document.getElementById('id01').style.display='none'">Powrót</button>
                                     <button type="submit" class="confirmButton">USUŃ</button>
                                 </div>
                             </div>
                         </form>
                     </div>
+                    <script>
+                        var currentRow;
+                        document.querySelectorAll('.deleteButton').forEach(button => {
+                          button.addEventListener('click', function() {
+                            currentRow = this.closest('tr');
+                            currentRow.classList.add('highlighted');
+                          });
+                        });
+                        document.getElementById('cancelRemove').onclick = function() {
+                        document.getElementById('id01').style.display='none'
+                        if (currentRow) {
+                            currentRow.classList.remove('highlighted');
+                            currentRow = null;
+                        }
+    }
 
+
+                    </script>
 
 
 
@@ -118,4 +136,8 @@
 
 
 </body>
+<footer>
+    <p>Autorzy: <a class="link" href="https://github.com/eckson888">eckson888</a> <a class="link" href="https://github.com/zouuek" style="margin-left: 1px;"/>zouuek</a> </p>
+</footer>
+
 </html>

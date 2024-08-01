@@ -27,6 +27,41 @@ body
    float: left;
    margin: 25px 10px 0px 10px;
 }
+footer {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: transparent;
+  color: white;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+/*
+-----------------------------------------
+***************SCROLL BAR****************
+-----------------------------------------
+*/
+/* Firefox */
+* {
+    scrollbar-width: auto;
+    scrollbar-color: #464148 #2a2828;
+}
+
+/* reszta */
+*::-webkit-scrollbar {
+    width: 16px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #2a2828;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #464148;
+}
+
 
 /*
 -----------------------------------------
@@ -199,6 +234,7 @@ body
     font-family: monospace;
     width:14%;
     animation: fadeCancelButton 0.3s;
+    pointer-events: auto;
 }
 .cancelButton:hover{
     background-color:#24871b;
@@ -216,6 +252,7 @@ body
     font-family: monospace;
     width: 14%;
     animation: fadeConfirmButton 0.3s;
+    pointer-events: auto;
 }
 .confirmButton:hover{
     background-color: #942019;
@@ -385,25 +422,25 @@ table.itemTable th{
 
 /* The Modal (background) */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
+    display: none;
+    position: fixed;
+    top: 10%;
+    left: 35%;
+    width: 30%;
+    height: 1%;
     background-color: transparent;
     padding-top: 50px;
+    margin: auto;
+    pointer-events: none;
 }
 
-/* Modal Content/Box */
+
 .modal-content {
     background-color: #212121;
-    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-    width: 30%; /* Could be more or less, depending on screen size */
+    margin: 5% auto 15% auto;
     animation: fadeBackground 0.3s;
     animation-fill-mode: forwards;
+    pointer-events: none;
 }
 
 /* Clear floats - nw co to robi*/
@@ -424,4 +461,21 @@ table.itemTable th{
         color:white;
     }
 }
-
+.link:link {
+    color: white;
+    text-decoration: none;
+}
+.link:visited {
+    color: white;
+    text-decoration: none;
+}
+.link:hover {
+    color: #adadad;
+    text-decoration: underline;
+}
+.link:active {
+    text-decoration: underline;
+}
+.highlighted {
+    background: #56115c; /*#56115c*/
+}

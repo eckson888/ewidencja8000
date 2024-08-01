@@ -3,6 +3,7 @@
 <head>
     <base href="/">
     <link rel="stylesheet" th:href="@{styles/baza-style.css}"/>
+    <link rel="shortcut icon" type="image/png" th:href="@{/favicon.png}"/>
     <script type="text/javascript" th:src="@{/scripts/baza-script.js}"></script>
     <script src="/static/scripts/baza-script.js"></script>
     <title>Ewidencja 8000 - ULTIMATE</title>
@@ -46,10 +47,21 @@ align-items: flex-start;
 align-content: flex-start;">
     <div th:each="user : ${users}" class="usersCard">
         <p class="user-username" th:text="${user.username}">User: </p>
-        <form method="post" th:action="@{adminpanel/delete}">
-            <input type="hidden" th:name="id" th:value="${user.id}" />
-            <!--            <input type="submit" value="Usuń"  />-->
-            <button class="deleteButton">USUN</button>
+            <button onclick="document.getElementById('id02').style.display='block'" class="deleteButton">USUN</button>
+
+            <div id="id02" class="modal">
+                <form method="post" th:action="@{adminpanel/delete}" class="modal-content" >
+                    <input type="hidden" th:name="id" th:value="${user.id}" />
+                    <div class="container">
+                        <h1>Usunąć użytkownika z bazy?</h1>
+                        <p>Czy na pewno chcesz usunąć tego użytkownika?</p>
+                        <div class="clearfix">
+                            <button type="button" class="cancelButton" onclick="document.getElementById('id02').style.display='none'">Powrót</button>
+                            <button type="submit" class="confirmButton">USUŃ</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </form>
     </div>
 </div>

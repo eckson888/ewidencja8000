@@ -23,6 +23,7 @@ public class SecurityConfig {
                         .requestMatchers("/adminpanel/**").hasAuthority("ADMIN")
                         .requestMatchers("/styles/**").permitAll()
                         .requestMatchers("/scripts/**").permitAll()
+                        .requestMatchers("/favicon.ico").permitAll()
                         .anyRequest().authenticated()
 
                 )
